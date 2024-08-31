@@ -9,18 +9,18 @@ Sq_size=HGHT//DIM
 Max_fps=15
 img={}
 def loadimage():
-    img["wp"]=py.transform.scale(py.image.load('../chesspiece/wp.png'),(Sq_size,Sq_size))
-    img["wR"]=py.transform.scale(py.image.load("../chesspiece/wR.png"),(Sq_size,Sq_size))
-    img["wB"]=py.transform.scale(py.image.load("../chesspiece/wB.png"),(Sq_size,Sq_size))
-    img["wN"]=py.transform.scale(py.image.load("../chesspiece/wN.png"),(Sq_size,Sq_size))
-    img["wQ"]=py.transform.scale(py.image.load("../chesspiece/wQ.png"),(Sq_size,Sq_size))
-    img["wK"]=py.transform.scale(py.image.load("../chesspiece/wK.png"),(Sq_size,Sq_size))
-    img["bp"]=py.transform.scale(py.image.load("../chesspiece/bp.png"),(Sq_size,Sq_size))
-    img["bR"]=py.transform.scale(py.image.load("../chesspiece/bR.png"),(Sq_size,Sq_size))
-    img["bB"]=py.transform.scale(py.image.load("../chesspiece/bB.png"),(Sq_size,Sq_size))
-    img["bN"]=py.transform.scale(py.image.load("../chesspiece/bN.png"),(Sq_size,Sq_size))
-    img["bK"]=py.transform.scale(py.image.load("../chesspiece/bK.png"),(Sq_size,Sq_size))
-    img["bQ"]=py.transform.scale(py.image.load("../chesspiece/bQ.png"),(Sq_size,Sq_size))
+    img["wp"]=py.transform.scale(py.image.load('chesspiece/wp.png'),(Sq_size,Sq_size))
+    img["wR"]=py.transform.scale(py.image.load("chesspiece/wR.png"),(Sq_size,Sq_size))
+    img["wB"]=py.transform.scale(py.image.load("chesspiece/wB.png"),(Sq_size,Sq_size))
+    img["wN"]=py.transform.scale(py.image.load("chesspiece/wN.png"),(Sq_size,Sq_size))
+    img["wQ"]=py.transform.scale(py.image.load("chesspiece/wQ.png"),(Sq_size,Sq_size))
+    img["wK"]=py.transform.scale(py.image.load("chesspiece/wK.png"),(Sq_size,Sq_size))
+    img["bp"]=py.transform.scale(py.image.load("chesspiece/bp.png"),(Sq_size,Sq_size))
+    img["bR"]=py.transform.scale(py.image.load("chesspiece/bR.png"),(Sq_size,Sq_size))
+    img["bB"]=py.transform.scale(py.image.load("chesspiece/bB.png"),(Sq_size,Sq_size))
+    img["bN"]=py.transform.scale(py.image.load("chesspiece/bN.png"),(Sq_size,Sq_size))
+    img["bK"]=py.transform.scale(py.image.load("chesspiece/bK.png"),(Sq_size,Sq_size))
+    img["bQ"]=py.transform.scale(py.image.load("chesspiece/bQ.png"),(Sq_size,Sq_size))
 
 
         
