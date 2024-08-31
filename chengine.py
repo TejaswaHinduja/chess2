@@ -81,14 +81,4 @@ class Move:
 
 
 
-#import os
-
-# Define the relative path to the image
-#image_path = '../chesspiece/wp.png'
-
-# Check if the file exists at the specified path
-#if os.path.exists(image_path):
-    #print(f"Found the image at: {image_path}")
-#else:
-   # print(f"Image not found: {image_path}")
 
