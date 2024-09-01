@@ -28,6 +28,16 @@ class GameState():
             self.board[move.startrow][move.startcol]=move.piecemoved
             self.board[move.endrow][move.endcol]=move.piececaptured
             self.whitetomove = not self.whitetomove
+    
+    def getvalidmove(self):
+        return self.getposmove()
+    
+
+    def getposmove(self):
+        pass
+
+
+
 
 
 
