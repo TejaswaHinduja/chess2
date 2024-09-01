@@ -15,6 +15,7 @@ class GameState():
         self.whitetomove=True
         self.movelog=[]
 
+
     def makemove(self, move):#not for castling,enp,promote
         self.board[move.startrow ][move.startcol]="--"
         self.board[move.endrow ][move.endcol]=move.piecemoved
@@ -34,7 +35,33 @@ class GameState():
     
 
     def getposmove(self):
+        moves=[Move((6,4),(4,4),self.board)]
+        for r in range(len(self.board)):
+            for c in range(len(self.board[r])):
+            
+                turn=self.board[r][c][0]
+                if (turn == "w" and self.whitetomove) and (turn == "b" and not  self.whitetomove):
+                    piece=self.board[r][c][1]
+                if piece=="p":
+                    self.getpawnmove(r ,c , moves)
+                elif piece =="r":
+                    self.getrookmove(r ,c , moves)
+        return moves
+
+    def __eq__(self,other):
+        if isinstance(other,Move):
+            return self.MoveID == other.MoveID
+        return False
+
+    def getrookmove(self, r ,c , moves):
         pass
+
+    def getpawnmove(self, r ,c, moves):
+        pass
+
+
+
+
 
 
 
@@ -56,6 +83,8 @@ class Move:
         self.endcol = endsq[1]  # Corrected: use endsq for the ending column
         self.piecemoved = board[self.startrow][self.startcol]
         self.piececaptured = board[self.endrow][self.endcol]  # Corrected: use endrow and endcol
+        self.MoveID= self.startrow*1000 + self.startcol*100 + self.endrow*10 + self.endcol
+        print(self.MoveID)
 
     def chessnota(self):
         return self.getrankfile(self.startrow, self.startcol) + self.getrankfile(self.endrow, self.endcol)

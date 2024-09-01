@@ -8,6 +8,7 @@ DIM=8
 Sq_size=HGHT//DIM
 Max_fps=15
 img={}
+
 def loadimage():
     img["wp"]=py.transform.scale(py.image.load('chesspiece/wp.png'),(Sq_size,Sq_size))
     img["wR"]=py.transform.scale(py.image.load("chesspiece/wR.png"),(Sq_size,Sq_size))
@@ -30,6 +31,8 @@ def main():
     clock = py.time.Clock()
     screen.fill(py.Color("white"))
     gs = GameState()
+    validmoves=gs.getvalidmove()
+    movemade=False
     loadimage()
     running = True
     Sqselect=()
@@ -51,12 +54,20 @@ def main():
                 if len(playerclick) == 2:
                     move=chengine.Move(playerclick[0], playerclick[1], gs.board)
                     print(move.chessnota())
+                    if move in validmoves:
+                        gs.makemove(move)
+                        movemade=True
+
                     gs.makemove(move)
                     Sqselect=()
                     playerclick=[]
             elif e.type== py.KEYDOWN:#keys handle
                 if e.key==py.K_z:#z is used to undo
                     gs.undomove()
+                    movemade=True
+            if movemade:
+                validmoves=gs.getvalidmove()
+                movemade=False
                
             clock.tick(Max_fps)
             py.display.flip()
