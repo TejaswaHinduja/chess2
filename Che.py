@@ -38,7 +38,7 @@ def main():
         for e in py.event.get():
             if e.type == py.QUIT:
                 running = False
-            elif e.type == py.MOUSEBUTTONDOWN:
+            elif e.type == py.MOUSEBUTTONDOWN:#mouse handle
                 loc=py.mouse.get_pos()
                 col=loc[0]// Sq_size
                 row=loc[1]//Sq_size
@@ -54,7 +54,9 @@ def main():
                     gs.makemove(move)
                     Sqselect=()
                     playerclick=[]
-
+            elif e.type== py.KEYDOWN:#keys handle
+                if e.key==py.K_z:#z is used to undo
+                    gs.undomove()
                
             clock.tick(Max_fps)
             py.display.flip()

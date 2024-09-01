@@ -14,11 +14,21 @@ class GameState():
             ["wR","wN","wB","wQ","wK","wB","wN","wR"] ]
         self.whitetomove=True
         self.movelog=[]
-    def makemove(self, move):
+
+    def makemove(self, move):#not for castling,enp,promote
         self.board[move.startrow ][move.startcol]="--"
         self.board[move.endrow ][move.endcol]=move.piecemoved
         self.movelog.append(move)
         self.whitetomove = not self.whitetomove
+    
+    
+    def undomove(self):
+        if len(self.movelog)!=0:
+            move = self.movelog.pop()
+            self.board[move.startrow][move.startcol]=move.piecemoved
+            self.board[move.endrow][move.endcol]=move.piececaptured
+            self.whitetomove = not self.whitetomove
+
 
 
 class Move:
